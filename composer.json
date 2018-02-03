@@ -1,0 +1,28 @@
+{
+    "name": "aleksip/patternengine-tpl",
+    "type": "patternlab-patternengine",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Aleksi Peebles",
+            "email": "aleksi@iki.fi"
+        }
+    ],
+    "require": {
+        "pattern-lab/core": "^2.0.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "aleksip\\PatternEngine\\Tpl": "src/"
+        }
+    },
+    "extra": {
+        "patternlab": {
+            "config": {
+                "lineageMatch": "<?php([ ]+)?(?:include)( |\\()[&quot;\\&#039;]([\\/.A-Za-z0-9-_]+)[&quot;\\&#039;]([\\s\\S+]*?)\\?>",
+                "lineageMatchKey": 3,
+                "patternExtension": "tpl.php"
+            }
+        }
+    }
+}
