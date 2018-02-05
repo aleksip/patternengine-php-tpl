@@ -1,14 +1,22 @@
 <?php
 
 namespace aleksip\PatternEngine\Tpl\Loaders;
-
-use PatternLab\PatternEngine\Loader;
+use PatternLab\Config;
+use PatternLab\Console;
 
 /**
  * @author Aleksi Peebles <aleksi@iki.fi>
  */
-class FilesystemLoader extends Loader
+class FilesystemLoader extends AbstractTplLoader
 {
+    protected $templatePath;
+
+    public function __construct($options = array())
+    {
+        $this->templatePath = $options['templatePath'];
+        set_include_path(get_include_path().PATH_SEPARATOR.$options['partialsPath']);
+    }
+
     /**
      * Render a template.
      *
@@ -21,6 +29,13 @@ class FilesystemLoader extends Loader
         $template = $options['template'];
         $data = $options['data'];
 
-        return '';
+        if (file_exists(($file = $this->templatePath.DIRECTORY_SEPARATOR.$template.'.tpl.php'))) {
+            $template = file_get_contents($file);
+        }
+        else {
+            Console::writeInfo('template '.$file.' was not found...');
+        }
+
+        return $this->renderTpl($template, $data);
     }
 }

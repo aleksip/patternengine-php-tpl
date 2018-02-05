@@ -2,12 +2,10 @@
 
 namespace aleksip\PatternEngine\Tpl\Loaders;
 
-use PatternLab\PatternEngine\Loader;
-
 /**
  * @author Aleksi Peebles <aleksi@iki.fi>
  */
-class PatternLoader extends Loader
+class PatternLoader extends AbstractTplLoader
 {
     /**
      * Render a pattern.
@@ -21,6 +19,6 @@ class PatternLoader extends Loader
         $pattern = $options['pattern'];
         $data = $options['data'];
 
-        return '';
+        return $this->renderTpl($pattern, $data);
     }
 }

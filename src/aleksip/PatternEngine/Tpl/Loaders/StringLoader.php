@@ -2,12 +2,10 @@
 
 namespace aleksip\PatternEngine\Tpl\Loaders;
 
-use PatternLab\PatternEngine\Loader;
-
 /**
  * @author Aleksi Peebles <aleksi@iki.fi>
  */
-class StringLoader extends Loader
+class StringLoader extends AbstractTplLoader
 {
     /**
      * Render a string.
@@ -21,6 +19,6 @@ class StringLoader extends Loader
         $string = $options['string'];
         $data = $options['data'];
 
-        return '';
+        return $this->renderTpl($string, $data);
     }
 }

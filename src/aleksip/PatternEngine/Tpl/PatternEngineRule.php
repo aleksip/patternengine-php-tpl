@@ -13,7 +13,7 @@ class PatternEngineRule extends Rule
     {
         parent::__construct();
 
-        $this->engineProp = 'tpl.php';
+        $this->engineProp = 'php';
         $this->basePath = '\aleksip\PatternEngine\Tpl';
     }
 }
