@@ -1,6 +1,6 @@
 {
     "name": "aleksip/patternengine-tpl",
-    "description": "Drupal .tpl.php PatternEngine for Pattern Lab",
+    "description": "PHPTemplate PatternEngine for Pattern Lab",
     "type": "patternlab-patternengine",
     "license": "GPL-2.0-or-later",
     "authors": [
